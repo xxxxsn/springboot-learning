@@ -1,0 +1,53 @@
+### 总览（看当前 style）
+GET http://localhost:8025/api/exception/overview
+X-Trace-Id: demo-trace-001
+
+### 订单存在
+GET http://localhost:8025/api/exception/orders/1001
+
+### 订单不存在 → 404 + code=20404
+GET http://localhost:8025/api/exception/orders/999999
+
+### 取消已取消订单 → 409
+POST http://localhost:8025/api/exception/orders/1002/cancel
+
+### 创建成功
+POST http://localhost:8025/api/exception/orders
+Content-Type: application/json
+
+{
+  "sku": "SKU-A",
+  "quantity": 2
+}
+
+### 校验失败 → 400 + errors[]
+POST http://localhost:8025/api/exception/orders
+Content-Type: application/json
+
+{
+  "sku": "",
+  "quantity": 0
+}
+
+### 库存不足 → 400 + code=20400
+POST http://localhost:8025/api/exception/orders
+Content-Type: application/json
+
+{
+  "sku": "SKU-A",
+  "quantity": 101
+}
+
+### 无权限 → 403
+GET http://localhost:8025/api/exception/forbidden
+
+### 系统异常兜底 → 500（无堆栈）
+GET http://localhost:8025/api/exception/boom
+
+### 缺少参数
+GET http://localhost:8025/api/exception/need-param
+
+###
+### ProblemDetail 模式：
+### cmd /c "mvn -pl springboot-web-exception spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=problem"
+###

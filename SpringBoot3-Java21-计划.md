@@ -38,6 +38,7 @@
 | 19 | `springboot-log4j2` | 8019 | Log4j2 异步对比 |
 | 23 | `springboot-web-restful` | 8023 | REST 规范、统一 R、HTTP 状态对照 |
 | 24 | `springboot-web-validation` | 8024 | 自定义注解、分组、嵌套、手动 Validator |
+| 25 | `springboot-web-exception` | 8025 | 企业异常：码→HTTP、traceId、信封/ProblemDetail |
 | 31 | `springboot-web-i18n` | 8031 | 错误码返回 i18n key，MessageSource 对照 |
 
 其余仍以本清单为索引；域 01 其它模块目前多为工程骨架。

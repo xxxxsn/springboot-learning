@@ -8,23 +8,24 @@ Spring Boot 3 + Java 21 企业技术百科（可运行案例库）。
 
 当前已实现：
 
-| # | 模块 | 端口 | 状态 |
-|---|---|---|---|
-| 1 | `springboot-common` | — | 已完成 |
-| 2 | `springboot-hello` | 8002 | 已完成 |
-| 3 | `springboot-java21-features` | 8003 | 已完成 |
-| 5 | `springboot-maven-multimodule` | 8005 | 已完成 |
-| 8 | `springboot-lombok-hutool` | 8008 | 已完成 |
-| 9 | `springboot-profiles` | 8009 | 已完成 |
-| 11 | `springboot-jasypt` | 8011 | 已完成 |
-| 14 | `springboot-lifecycle` | 8014 | 已完成 |
-| 16 | `springboot-spi-plugin` | 8016 | 已完成 |
-| 17 | `springboot-docker-compose` | 8017 | 已完成 |
-| 18 | `springboot-logback` | 8018 | 已完成 |
-| 19 | `springboot-log4j2` | 8019 | 已完成 |
-| 23 | `springboot-web-restful` | 8023 | 已完成 |
-| 24 | `springboot-web-validation` | 8024 | 已完成 |
-| 31 | `springboot-web-i18n` | 8031 | 已完成 |
+| # | 模块 | 端口 | 状态 | 核心内容 |
+|---|---|---|---|---|
+| 1 | `springboot-common` | — | 已完成 | 统一 `R`、错误码、全局异常、分页、工具 + Boot3 自动配置 |
+| 2 | `springboot-hello` | 8002 | 已完成 | Boot3 起步 + `AutoConfiguration.imports` 自定义自动配置 |
+| 3 | `springboot-java21-features` | 8003 | 已完成 | record / sealed / 模式匹配 / 文本块 / Sequenced |
+| 5 | `springboot-maven-multimodule` | 8005 | 已完成 | 多模块 BOM + api/service/web 分层 + Nexus 约定 |
+| 8 | `springboot-lombok-hutool` | 8008 | 已完成 | Lombok 坑 + Hutool 高频工具 + Guava 经典用法 |
+| 9 | `springboot-profiles` | 8009 | 已完成 | 多环境、Profile 组、config.import、`@Profile`、生效配置观测 |
+| 11 | `springboot-jasypt` | 8011 | 已完成 | 配置 `ENC(...)` 加解密（jasypt-spring-boot） |
+| 14 | `springboot-lifecycle` | 8014 | 已完成 | 启动/停机时间线：RunListener、Runner、事件、Bean、SmartLifecycle、优雅停机 |
+| 16 | `springboot-spi-plugin` | 8016 | 已完成 | Java SPI / Spring Bean 策略 / SpringFactoriesLoader 插件发现 |
+| 17 | `springboot-docker-compose` | 8017 | 已完成 | Boot 开发期自动 docker compose + Redis Service Connection |
+| 18 | `springboot-logback` | 8018 | 已完成 | MDC、业务分文件、Structured JSON |
+| 19 | `springboot-log4j2` | 8019 | 已完成 | 排除 Logback、Log4j2 异步对比、轻量 MDC |
+| 23 | `springboot-web-restful` | 8023 | 已完成 | REST 动词/状态码/Location + 统一 R；信封 vs HTTP 状态对照 |
+| 24 | `springboot-web-validation` | 8024 | 已完成 | 自定义注解、分组、嵌套、手动 Validator；错误列表进 R |
+| 25 | `springboot-web-exception` | 8025 | 已完成 | 企业异常：码→HTTP、traceId、信封/ProblemDetail、脱敏兜底 |
+| 31 | `springboot-web-i18n` | 8031 | 已完成 | 错误响应返回 i18n key；MessageSource 按请求语言对照 |
 
 其余域 01（1–22）多为**骨架占位**，见 [`docs/索引.md`](docs/索引.md)。
 
@@ -63,6 +64,7 @@ mvn -pl springboot-maven-multimodule/demo-web -am spring-boot:run
 # log4j2      → http://localhost:8019/api/log4j2/status
 # web-restful → http://localhost:8023/api/restful/overview
 # validation  → http://localhost:8024/api/validation/overview
+# exception   → http://localhost:8025/api/exception/overview
 # i18n        → http://localhost:8031/api/i18n/login
 ```
 
@@ -71,7 +73,7 @@ Jasypt 教学默认主密钥：`springboot-learning-demo`（可用环境变量 `
 ## 构建
 
 ```bash
-mvn -pl springboot-common,springboot-hello,springboot-java21-features,springboot-maven-multimodule,springboot-lombok-hutool,springboot-profiles,springboot-jasypt,springboot-lifecycle,springboot-spi-plugin,springboot-docker-compose,springboot-logback,springboot-log4j2,springboot-web-restful,springboot-web-validation,springboot-web-i18n -am package
+mvn -pl springboot-common,springboot-hello,springboot-java21-features,springboot-maven-multimodule,springboot-lombok-hutool,springboot-profiles,springboot-jasypt,springboot-lifecycle,springboot-spi-plugin,springboot-docker-compose,springboot-logback,springboot-log4j2,springboot-web-restful,springboot-web-validation,springboot-web-exception,springboot-web-i18n -am package
 ```
 
 

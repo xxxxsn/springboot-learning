@@ -1,0 +1,22 @@
+server:
+  port: 8025
+
+spring:
+  application:
+    name: springboot-web-exception
+  # 404 也走异常处理器，便于统一包装
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+
+# 企业异常封装配置（实战可下沉到公司 framework）
+demo:
+  exception:
+    # ENVELOPE=统一错误体 + HTTP 状态对齐；PROBLEM_DETAIL=RFC7807
+    style: ENVELOPE
+
+logging:
+  level:
+    com.xiesn.springboot.web.exception: INFO
