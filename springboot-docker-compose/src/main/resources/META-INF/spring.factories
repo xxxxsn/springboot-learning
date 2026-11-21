@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.xiesn.springboot.docker.compose.ComposeFileEnvironmentPostProcessor

@@ -1,0 +1,6 @@
+demo:
+  env-name: production
+  message: hello-from-production
+  feature:
+    debug: false
+  datasource-label: mysql-production

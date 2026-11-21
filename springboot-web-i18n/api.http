@@ -1,0 +1,50 @@
+### 登录失败：message 是 key，不是中文
+POST http://localhost:8031/api/i18n/login
+Content-Type: application/json
+
+{
+  "username": "ada",
+  "password": "wrong"
+}
+
+### 登录成功：教学口令 secret
+POST http://localhost:8031/api/i18n/login
+Content-Type: application/json
+
+{
+  "username": "ada",
+  "password": "secret"
+}
+
+### 参数校验：用户名为空，message = common.param_invalid
+POST http://localhost:8031/api/i18n/login
+Content-Type: application/json
+
+{
+  "username": "",
+  "password": "secret"
+}
+
+### 文件类型不允许
+POST http://localhost:8031/api/i18n/files
+Content-Type: application/json
+
+{
+  "filename": "note.exe"
+}
+
+### 允许的图片扩展名
+POST http://localhost:8031/api/i18n/files
+Content-Type: application/json
+
+{
+  "filename": "avatar.png"
+}
+
+### 对照：服务端按英文译出句子
+GET http://localhost:8031/api/i18n/messages?key=auth.login.invalid_credentials
+Accept-Language: en
+
+### 对照：服务端按简体中文译出句子
+GET http://localhost:8031/api/i18n/messages?key=file.type_not_allowed
+Accept-Language: zh-CN

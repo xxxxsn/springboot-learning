@@ -1,0 +1,4 @@
+# 自定义 Spring SPI 扩展点（非 AutoConfiguration；Boot3 自动配置请用 AutoConfiguration.imports）
+com.xiesn.springboot.spi.plugin.springfactories.PluginExtension=\
+com.xiesn.springboot.spi.plugin.springfactories.AuditPluginExtension,\
+com.xiesn.springboot.spi.plugin.springfactories.MetricsPluginExtension

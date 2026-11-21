@@ -1,0 +1,15 @@
+{
+  "errors": {
+    "common": {
+      "param_invalid": "Invalid request parameters"
+    },
+    "auth": {
+      "login": {
+        "invalid_credentials": "Incorrect username or password"
+      }
+    },
+    "file": {
+      "type_not_allowed": "File type is not allowed"
+    }
+  }
+}

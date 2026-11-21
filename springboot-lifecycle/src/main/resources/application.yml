@@ -1,0 +1,16 @@
+server:
+  port: 8014
+  # Boot 3.5 默认已是优雅停机；显式写出便于对照文档
+  # 若要对比「立即停」，可改为 immediate
+  shutdown: graceful
+
+spring:
+  application:
+    name: springboot-lifecycle
+  lifecycle:
+    # 每个停机阶段的最长等待（在途请求 / SmartLifecycle.stop）
+    timeout-per-shutdown-phase: 30s
+
+logging:
+  level:
+    com.xiesn.springboot.lifecycle: INFO

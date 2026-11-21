@@ -1,0 +1,11 @@
+﻿### 查看自动解密后的配置
+GET http://localhost:8011/api/jasypt/secrets
+
+### 加密明文（返回可粘贴的 ENC(...)）
+POST http://localhost:8011/api/jasypt/encrypt?plainText=HelloJasypt
+
+### 解密（带 ENC 前缀）
+POST http://localhost:8011/api/jasypt/decrypt?cipherText=ENC(cK6P3/nvsc8Z2NHTHriH4w0Mt6fdde71OyDeEHnk4xVJcaSRY4AaSovxHTE0Pq283bLp+SdecPKAb9/8nPigfQ==)
+
+### 解密（裸密文）
+POST http://localhost:8011/api/jasypt/decrypt?cipherText=cK6P3/nvsc8Z2NHTHriH4w0Mt6fdde71OyDeEHnk4xVJcaSRY4AaSovxHTE0Pq283bLp+SdecPKAb9/8nPigfQ==

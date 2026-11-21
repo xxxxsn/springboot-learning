@@ -1,0 +1,4 @@
+﻿### springboot-ssl-bundle 骨架占位（功能未实现）
+### 端口: 8012
+
+GET http://localhost:8012/actuator/health

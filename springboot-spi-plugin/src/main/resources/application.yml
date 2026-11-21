@@ -1,0 +1,6 @@
+erver:
+  port: 8016
+
+spring:
+  application:
+    name: springboot-spi-plugin

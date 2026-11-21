@@ -1,0 +1,17 @@
+﻿### 全部特性一次看
+GET http://localhost:8003/api/java21
+
+### record
+GET http://localhost:8003/api/java21/record?x=3&y=4
+
+### 密封类 + 模式匹配（圆形）
+GET http://localhost:8003/api/java21/sealed?type=circle&a=2
+
+### 密封类 + 模式匹配（矩形）
+GET http://localhost:8003/api/java21/sealed?type=rectangle&a=2&b=5
+
+### 文本块
+GET http://localhost:8003/api/java21/text-block?table=t_order
+
+### SequencedCollection
+GET http://localhost:8003/api/java21/sequenced

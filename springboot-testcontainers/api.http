@@ -1,0 +1,4 @@
+﻿### springboot-testcontainers 骨架占位（功能未实现）
+### 端口: 8021
+
+GET http://localhost:8021/actuator/health

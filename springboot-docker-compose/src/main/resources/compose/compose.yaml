@@ -1,0 +1,21 @@
+# Spring Boot Docker Compose 演示文件（放在模块根目录）
+# Boot 启动时会 docker compose up，并为匹配镜像创建 Service Connection
+services:
+  redis:
+    image: redis:7.4
+    # 不写死宿主机端口，让 Docker 分配临时端口；Boot 会发现映射端口
+    ports:
+      - "6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+      start_period: 2s
+
+  # 演示：带 ignore 标签的容器不会建立 Service Connection
+  sidecar:
+    image: alpine:3.20
+    command: ["sleep", "infinity"]
+    labels:
+      org.springframework.boot.ignore: "true"

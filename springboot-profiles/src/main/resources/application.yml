@@ -1,0 +1,43 @@
+server:
+  port: 8009
+
+spring:
+  application:
+    name: springboot-profiles
+  profiles:
+    active: dev
+    default: dev
+    group:
+      production:
+        - proddb
+        - prodmq
+  config:
+    # 文件不存在也不失败；存在时可覆盖 demo.import-hint
+    import: optional:file:./config/local-override.yml
+
+# 公共默认（可被 profile 文件 / import / 命令行覆盖）
+demo:
+  env-name: default
+  message: from-application-yml
+  feature:
+    debug: false
+  datasource-label: none
+  import-hint: not-imported
+  multidoc-flag: base
+
+---
+# 多文档：仅当 active 含 dev 时合并
+spring:
+  config:
+    activate:
+      on-profile: dev
+demo:
+  multidoc-flag: multidoc-dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+demo:
+  multidoc-flag: multidoc-production

@@ -1,0 +1,11 @@
+server:
+  port: 8019
+
+spring:
+  application:
+    name: springboot-log4j2
+
+# 业务包 DEBUG，方便演示；真正级别以 log4j2-spring.xml 为准
+logging:
+  level:
+    com.xiesn.springboot.log4j2: DEBUG

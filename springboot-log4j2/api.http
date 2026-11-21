@@ -1,0 +1,11 @@
+### 确认当前是 Log4j2
+GET http://localhost:8019/api/log4j2/status
+
+### 带 MDC 的样例日志（响应头 X-Trace-Id）
+GET http://localhost:8019/api/log4j2/sample?message=hello
+
+### 异步突发（对比耗时）
+GET http://localhost:8019/api/log4j2/async-burst?lines=2000
+
+### 同步突发
+GET http://localhost:8019/api/log4j2/sync-burst?lines=2000

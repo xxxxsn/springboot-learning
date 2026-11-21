@@ -1,0 +1,47 @@
+### 约定总览
+GET http://localhost:8023/api/restful/overview
+
+### 分页列表
+GET http://localhost:8023/api/articles?pageNum=1&pageSize=10
+
+### 关键字过滤
+GET http://localhost:8023/api/articles?keyword=REST
+
+### 查询单篇（把 id 换成实际值）
+GET http://localhost:8023/api/articles/1001
+
+### 创建 → 看 201 + Location
+POST http://localhost:8023/api/articles
+Content-Type: application/json
+
+{
+  "title": "新文章",
+  "content": "REST 创建演示"
+}
+
+### 全量替换 PUT
+PUT http://localhost:8023/api/articles/1001
+Content-Type: application/json
+
+{
+  "title": "已发布标题",
+  "content": "全量替换后的正文",
+  "status": "PUBLISHED"
+}
+
+### 部分更新 PATCH
+PATCH http://localhost:8023/api/articles/1001
+Content-Type: application/json
+
+{
+  "title": "只改标题"
+}
+
+### 删除 → 204
+DELETE http://localhost:8023/api/articles/1001
+
+### 信封风格失败（HTTP 200 + code=404）
+GET http://localhost:8023/api/restful/styles/envelope/999999
+
+### HTTP 状态风格失败（HTTP 404 + code=404）
+GET http://localhost:8023/api/restful/styles/status/999999

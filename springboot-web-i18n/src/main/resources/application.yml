@@ -1,0 +1,15 @@
+server:
+  port: 8031
+
+spring:
+  application:
+    name: springboot-web-i18n
+  messages:
+    basename: messages
+    encoding: UTF-8
+    # 缺译文时不要改用操作系统语言，否则 Accept-Language: en 在中文 Windows 上会漂回中文
+    fallback-to-system-locale: false
+
+logging:
+  level:
+    com.xiesn.springboot.i18n: INFO

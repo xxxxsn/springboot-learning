@@ -1,0 +1,83 @@
+### 约定总览
+GET http://localhost:8024/api/validation/overview
+
+### 创建成功
+POST http://localhost:8024/api/validation/users
+Content-Type: application/json
+
+{
+  "username": "alice",
+  "mobile": "13800138000",
+  "status": "ENABLED",
+  "address": {
+    "province": "广东",
+    "city": "深圳",
+    "detail": "南山区"
+  }
+}
+
+### 创建失败：多字段（手机号 + 枚举 + 用户名过短）
+POST http://localhost:8024/api/validation/users
+Content-Type: application/json
+
+{
+  "username": "a",
+  "mobile": "123",
+  "status": "UNKNOWN",
+  "address": {
+    "province": "广东",
+    "city": "深圳",
+    "detail": "南山区"
+  }
+}
+
+### 嵌套地址失败
+POST http://localhost:8024/api/validation/users/nested-fail
+Content-Type: application/json
+
+{
+  "username": "bob",
+  "mobile": "13900139000",
+  "status": "ENABLED",
+  "address": {
+    "province": "广东",
+    "city": "",
+    "detail": "南山区"
+  }
+}
+
+### 更新成功（路径 id 会写入 body 再按 Update 分组校验）
+PUT http://localhost:8024/api/validation/users/1001
+Content-Type: application/json
+
+{
+  "username": "alice2",
+  "mobile": "13800138001",
+  "status": "DISABLED",
+  "address": {
+    "province": "广东",
+    "city": "广州",
+    "detail": "天河区"
+  }
+}
+
+### 方法级校验手机号
+GET http://localhost:8024/api/validation/users/check-mobile?mobile=13800138000
+
+### 方法级校验失败
+GET http://localhost:8024/api/validation/users/check-mobile?mobile=abc
+
+### 手动 Validator（模拟 MQ）
+POST http://localhost:8024/api/validation/manual
+Content-Type: application/json
+
+{
+  "username": "mq-user",
+  "mobile": "13700137000",
+  "status": "ENABLED",
+  "address": {
+    "province": "广东",
+    "city": "深圳",
+    "detail": "福田"
+  }
+}

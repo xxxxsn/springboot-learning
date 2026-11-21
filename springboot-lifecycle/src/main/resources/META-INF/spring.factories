@@ -1,0 +1,6 @@
+# Boot 仍通过 spring.factories 加载这两类扩展（与 AutoConfiguration.imports 职责不同）
+org.springframework.boot.SpringApplicationRunListener=\
+com.xiesn.springboot.lifecycle.bootstrap.DemoSpringApplicationRunListener
+
+org.springframework.context.ApplicationContextInitializer=\
+com.xiesn.springboot.lifecycle.bootstrap.DemoApplicationContextInitializer

@@ -1,0 +1,10 @@
+server:
+  port: 8023
+
+spring:
+  application:
+    name: springboot-web-restful
+
+logging:
+  level:
+    com.xiesn.springboot.web.restful: INFO

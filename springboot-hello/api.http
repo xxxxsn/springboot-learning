@@ -1,0 +1,14 @@
+﻿### 问候（默认称呼）
+GET http://localhost:8002/api/hello
+
+### 问候（自定义称呼）
+GET http://localhost:8002/api/hello?name=张三
+
+### 查看自动配置属性
+GET http://localhost:8002/api/hello/config
+
+### 业务异常演示（应返回 code=1000）
+GET http://localhost:8002/api/hello/boom?keyword=bad
+
+### 业务校验通过
+GET http://localhost:8002/api/hello/boom?keyword=ok

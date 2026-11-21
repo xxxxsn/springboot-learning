@@ -1,0 +1,6 @@
+demo:
+  env-name: test
+  message: hello-from-test
+  feature:
+    debug: true
+  datasource-label: h2-test

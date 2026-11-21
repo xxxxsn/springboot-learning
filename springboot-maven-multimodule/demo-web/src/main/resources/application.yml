@@ -1,0 +1,10 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: springboot-maven-multimodule-demo-web
+
+logging:
+  level:
+    com.xiesn.springboot.maven.multimodule: INFO

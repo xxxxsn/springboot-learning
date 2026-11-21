@@ -1,0 +1,11 @@
+﻿### 商品列表（演示 web → service → api）
+GET http://localhost:8005/api/products
+
+### 商品详情
+GET http://localhost:8005/api/products/1
+
+### 不存在的商品（应返回业务异常 R）
+GET http://localhost:8005/api/products/999
+
+### 查看多模块分层说明
+GET http://localhost:8005/api/products/meta/modules

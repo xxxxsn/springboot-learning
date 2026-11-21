@@ -1,0 +1,3 @@
+# 仅作标记：logback-spring.xml 的 <springProfile name="json"> 会切控制台为 JSON
+demo:
+  log-console-format: json

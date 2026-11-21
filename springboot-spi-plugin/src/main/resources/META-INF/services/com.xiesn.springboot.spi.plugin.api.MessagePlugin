@@ -1,0 +1,2 @@
+com.xiesn.springboot.spi.plugin.javaspi.SmsMessagePlugin
+com.xiesn.springboot.spi.plugin.javaspi.EmailMessagePlugin

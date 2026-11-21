@@ -1,0 +1,36 @@
+### Lombok 常用注解汇总
+GET http://localhost:8008/api/lombok/overview
+
+### Lombok Builder + Jackson（已修好的模型）
+POST http://localhost:8008/api/lombok/jackson
+Content-Type: application/json
+
+{
+  "username": "demo",
+  "age": 20
+}
+
+### Lombok equals/hashCode 坑
+GET http://localhost:8008/api/lombok/equals
+
+### Hutool 全部样例
+GET http://localhost:8008/api/hutool/all
+
+### Hutool 分入口
+GET http://localhost:8008/api/hutool/str
+GET http://localhost:8008/api/hutool/date
+GET http://localhost:8008/api/hutool/id
+GET http://localhost:8008/api/hutool/digest?text=hello
+GET http://localhost:8008/api/hutool/bean
+GET http://localhost:8008/api/hutool/json
+
+### Guava 全部样例
+GET http://localhost:8008/api/guava/all
+
+### Guava 分入口
+GET http://localhost:8008/api/guava/immutable
+GET http://localhost:8008/api/guava/partition
+GET http://localhost:8008/api/guava/joiner
+GET http://localhost:8008/api/guava/precondition?value=5
+GET http://localhost:8008/api/guava/precondition?value=-1
+GET http://localhost:8008/api/guava/cache?key=spring

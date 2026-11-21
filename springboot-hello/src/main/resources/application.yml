@@ -1,0 +1,17 @@
+﻿server:
+  port: 8002
+
+spring:
+  application:
+    name: springboot-hello
+
+# 自定义自动配置示例属性（对应 HelloProperties）
+demo:
+  hello:
+    enabled: true
+    greeting: 你好
+    default-name: Spring Boot 3
+
+logging:
+  level:
+    com.xiesn.springboot.hello: INFO

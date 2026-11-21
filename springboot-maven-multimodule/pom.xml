@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.xiesn</groupId>
+        <artifactId>springboot-learning</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>springboot-maven-multimodule</artifactId>
+    <packaging>pom</packaging>
+    <name>springboot-maven-multimodule</name>
+    <description>多模块工程示范：BOM、dependencyManagement、分层依赖、Nexus 发布约定</description>
+
+    <!-- 子模块构建顺序：BOM → api → service → web -->
+    <modules>
+        <module>demo-bom</module>
+        <module>demo-api</module>
+        <module>demo-service</module>
+        <module>demo-web</module>
+    </modules>
+
+    <!--
+      聚合父工程内直接管理本案例模块版本（子模块依赖可不写 version）。
+      注意：不要在本 POM 再 import 子模块 demo-bom，否则会形成「父依赖子、子又挂父」的循环。
+      demo-bom 的用途是：发布到私服后，给「其它独立工程」import 使用。
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xiesn</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiesn</groupId>
+                <artifactId>demo-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+      Nexus / 私服发布示例（默认注释，避免误连不存在的仓库）。
+      真实项目取消注释，并配合 settings-nexus.example.xml。
+    -->
+    <!--
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Releases</name>
+            <url>http://nexus.example.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshots</name>
+            <url>http://nexus.example.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    -->
+</project>

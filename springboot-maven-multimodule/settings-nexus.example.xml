@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Nexus / Maven 私服示例配置。
+  用法：复制为 ~/.m2/settings.xml（或 settings-security.xml 配密码），按公司地址修改。
+  本文件仅作教学对照，不会被 Maven 自动读取。
+-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+    <servers>
+        <!-- 与 pom distributionManagement 里的 repository.id 对应 -->
+        <server>
+            <id>nexus-releases</id>
+            <username>deploy</username>
+            <password>change-me</password>
+        </server>
+        <server>
+            <id>nexus-snapshots</id>
+            <username>deploy</username>
+            <password>change-me</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <!-- 公司内网常把中央仓镜像到 Nexus public 组 -->
+        <mirror>
+            <id>nexus-public</id>
+            <name>Nexus Public Group</name>
+            <url>http://nexus.example.com/repository/maven-public/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <repositories>
+                <repository>
+                    <id>nexus-public</id>
+                    <url>http://nexus.example.com/repository/maven-public/</url>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus-public</id>
+                    <url>http://nexus.example.com/repository/maven-public/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+</settings>

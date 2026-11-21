@@ -1,0 +1,50 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+.classpath
+.project
+.settings/
+bin/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / crash
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+
+# Env / secrets
+.env
+.env.*
+*.pem
+*.jks
+*.p12
+
+# Gradle (springboot-gradle 模块)
+.gradle/
+build/
+
+# Misc
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+.tmp-jasypt-lib/
+

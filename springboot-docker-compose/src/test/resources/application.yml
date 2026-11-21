@@ -1,0 +1,11 @@
+# 本模块测试需要本机 Docker；默认 skip.in-tests=true 会导致 Redis 无 Service Connection
+spring:
+  docker:
+    compose:
+      file: compose.yaml
+      enabled: true
+      skip:
+        in-tests: false
+      lifecycle-management: start-and-stop
+      readiness:
+        timeout: 90s

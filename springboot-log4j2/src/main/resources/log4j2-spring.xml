@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 必须用 log4j2-spring.xml，才能用 Spring 扩展（如 spring: 查找） -->
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="APP_NAME">${spring:spring.application.name:-springboot-log4j2}</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} traceId=%X{traceId} - %msg%n</Property>
+        <Property name="LOG_DIR">logs/${APP_NAME}</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <RollingFile name="RollingFile"
+                     fileName="${LOG_DIR}/app.log"
+                     filePattern="${LOG_DIR}/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
+        <!-- 异步包装：业务日志先入队再写磁盘，对比同步 Appender -->
+        <Async name="AsyncFile" bufferSize="1024">
+            <AppenderRef ref="RollingFile"/>
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <!-- 演示包：ASYNC 指向 AsyncFile + Console，突出与同步 Root 的差异 -->
+        <AsyncLogger name="com.xiesn.springboot.log4j2.demo" level="debug" includeLocation="false" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="AsyncFile"/>
+        </AsyncLogger>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

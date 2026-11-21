@@ -1,0 +1,14 @@
+### 状态（确认 Logback）
+GET http://localhost:8018/api/logback/status
+
+### 样例日志 + MDC（可传 X-Trace-Id / X-User-Id）
+GET http://localhost:8018/api/logback/sample?message=hello
+X-User-Id: u42
+
+### 业务分文件日志 → logs/springboot-logback/business.log
+GET http://localhost:8018/api/logback/business?action=place-order
+
+###
+### JSON 控制台：
+### cmd /c "mvn -pl springboot-logback spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=json"
+###

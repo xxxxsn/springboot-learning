@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.xiesn</groupId>
+        <artifactId>springboot-maven-multimodule</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <!--
+      BOM（Bill of Materials）只做版本清单，不产出业务代码。
+      其它工程也可单独 import 本 BOM，而不必继承本聚合父 POM。
+    -->
+    <artifactId>demo-bom</artifactId>
+    <packaging>pom</packaging>
+    <name>demo-bom</name>
+    <description>多模块案例 BOM：统一锁定 demo-api / demo-service 版本</description>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xiesn</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiesn</groupId>
+                <artifactId>demo-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -1,0 +1,32 @@
+﻿server:
+  port: 8011
+
+spring:
+  application:
+    name: springboot-jasypt
+
+# 主密钥：官方建议用环境变量 / 系统属性传入，不要提交真实生产口令。
+# 教学默认值仅方便本地一键启动，生产必须覆盖。
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD:springboot-learning-demo}
+    # 以下与官方默认一致，显式写出方便对照文档
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+    key-obtention-iterations: 1000
+    pool-size: 1
+    provider-name: SunJCE
+    salt-generator-classname: org.jasypt.salt.RandomSaltGenerator
+    iv-generator-classname: org.jasypt.iv.RandomIvGenerator
+    string-output-type: base64
+
+demo:
+  secret:
+    # 对照：明文直接写在配置里（仅演示）
+    api-key: plain-api-key-for-contrast
+    # 密文：用主密钥 springboot-learning-demo + 官方默认算法生成
+    # 明文原文 = MySecretDbPassword!
+    db-password: ENC(cK6P3/nvsc8Z2NHTHriH4w0Mt6fdde71OyDeEHnk4xVJcaSRY4AaSovxHTE0Pq283bLp+SdecPKAb9/8nPigfQ==)
+
+logging:
+  level:
+    com.xiesn.springboot.jasypt: INFO

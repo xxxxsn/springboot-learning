@@ -1,0 +1,11 @@
+# 本地开发环境
+demo:
+  env-name: dev
+  message: hello-from-dev
+  feature:
+    debug: true
+  datasource-label: h2-dev
+
+logging:
+  level:
+    com.xiesn.springboot.profiles: DEBUG

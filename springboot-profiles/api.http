@@ -1,0 +1,13 @@
+### 默认 dev：总览
+GET http://localhost:8009/api/profiles/overview
+
+### 生效 demo.*
+GET http://localhost:8009/api/profiles/effective
+
+### 当前 @Profile Banner
+GET http://localhost:8009/api/profiles/banner
+
+###
+### 切换 production 组后再点（示例命令）：
+### cmd /c "mvn -pl springboot-profiles spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=production"
+###

@@ -1,0 +1,10 @@
+﻿server:
+  port: 8003
+
+spring:
+  application:
+    name: springboot-java21-features
+
+logging:
+  level:
+    com.xiesn.springboot.java21: INFO

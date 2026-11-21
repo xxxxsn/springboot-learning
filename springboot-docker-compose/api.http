@@ -1,0 +1,8 @@
+### 配置摘要
+GET http://localhost:8017/api/docker-compose/status
+
+### Redis PING（依赖 Boot 拉起的 compose Redis）
+GET http://localhost:8017/api/docker-compose/redis/ping
+
+### Redis 读写往返
+GET http://localhost:8017/api/docker-compose/redis/round-trip?value=hello-compose

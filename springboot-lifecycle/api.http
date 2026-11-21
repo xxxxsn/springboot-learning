@@ -1,0 +1,11 @@
+### 完整时间线（启动后各钩子顺序）
+GET http://localhost:8014/api/lifecycle/timeline
+
+### 按 phase 汇总
+GET http://localhost:8014/api/lifecycle/summary
+
+### 运行态摘要（Initializer / SmartLifecycle / 优雅停机配置）
+GET http://localhost:8014/api/lifecycle/status
+
+### 慢请求（配合优雅停机：先点这个，再停进程）
+GET http://localhost:8014/api/lifecycle/slow?seconds=8

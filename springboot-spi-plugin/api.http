@@ -1,0 +1,17 @@
+## 三类发现机制总览
+GET http://localhost:8016/api/spi/overview
+
+### Java SPI：短信
+GET http://localhost:8016/api/spi/java/sms?payload=hello-sms
+
+### Java SPI：邮件
+GET http://localhost:8016/api/spi/java/email?payload=hello-email
+
+### Spring Bean：推送
+GET http://localhost:8016/api/spi/spring/push?payload=hello-push
+
+### Spring Bean：企微
+GET http://localhost:8016/api/spi/spring/wechat?payload=hello-wechat
+
+### 不存在的插件（期望业务 404）
+GET http://localhost:8016/api/spi/java/unknown

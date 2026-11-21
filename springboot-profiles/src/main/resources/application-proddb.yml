@@ -1,0 +1,3 @@
+# production 组展开后激活
+demo:
+  datasource-label: mysql-proddb

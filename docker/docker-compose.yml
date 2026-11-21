@@ -1,0 +1,26 @@
+﻿# 多模块共享中间件（手动按 profile 启动）
+# 示例：docker compose --profile mysql --profile redis up -d
+#
+# 若要体验「应用启动时自动 compose up + Service Connection」，
+# 请看模块 #17 springboot-docker-compose（模块内 compose.yaml + spring-boot-docker-compose）
+
+services:
+  mysql:
+    image: mysql:8.4
+    profiles: ["mysql"]
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: springboot_learning
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7.4
+    profiles: ["redis"]
+    ports:
+      - "6379:6379"
+
+volumes:
+  mysql_data:

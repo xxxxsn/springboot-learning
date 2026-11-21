@@ -1,0 +1,11 @@
+server:
+  port: 8018
+
+spring:
+  application:
+    name: springboot-logback
+
+logging:
+  level:
+    root: INFO
+    com.xiesn.springboot.logback: DEBUG

@@ -1,0 +1,10 @@
+server:
+  port: 8024
+
+spring:
+  application:
+    name: springboot-web-validation
+
+logging:
+  level:
+    com.xiesn.springboot.web.validation: INFO
