@@ -74,6 +74,11 @@ public class LifecycleController {
         body.put("serverShutdown", environment.getProperty("server.shutdown"));
         body.put("shutdownPhaseTimeout", environment.getProperty("spring.lifecycle.timeout-per-shutdown-phase"));
         body.put("timelineSize", LifecycleTimeline.snapshot().size());
+        body.put("observe", Map.of(
+                "mode", "日志优先",
+                "logs", "启动/停机控制台搜 [lifecycle] seq= phase=",
+                "api", "/timeline 只是汇总，顺序以日志为准"
+        ));
         return R.ok(body);
     }
 }

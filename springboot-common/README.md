@@ -1,4 +1,4 @@
-﻿# springboot-common
+# springboot-common
 
 > 编号：1 · 域 01 · **状态：已完成（2026-11-20）**  
 > 展开笔记：[docs/](docs/) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -41,6 +41,14 @@
 随 `springboot-hello` 启动后访问 `/api/hello/boom?keyword=bad`，应返回 `code=1000`。  
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口 | 随 hello / jasypt / web-* 一起看统一 `R` 与异常包装 |
+| 日志 | 其它模块抛 `BusinessException` 时 common 处理器打 warn |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

@@ -40,6 +40,14 @@ cmd /c "mvn -pl springboot-log4j2 -am spring-boot:run"
 
 `GET /api/log4j2/status` 应 `log4j2=true`；对比 async-burst / sync-burst 的 `costMs`。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 日志优先 | 异步/同步 burst 的控制台耗时与日志落盘；确认工厂是 Log4j2 |
+| 接口 | `/api/log4j2/status`、打点接口触发写日志 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

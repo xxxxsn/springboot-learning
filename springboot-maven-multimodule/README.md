@@ -1,4 +1,4 @@
-﻿# springboot-maven-multimodule
+# springboot-maven-multimodule
 
 > 编号：5 · 域 01 · **状态：已完成（2026-11-21）** · 启动端口：**8005**（demo-web）  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -58,6 +58,14 @@ mvn -pl springboot-maven-multimodule/demo-web -am spring-boot:run
 - `GET http://localhost:8005/api/products/1`
 - `GET http://localhost:8005/api/products/meta/modules`
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | `GET /api/products`（demo-web） |
+| 结构 | api / service / web 分层与 BOM，看源码比看日志更重要 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

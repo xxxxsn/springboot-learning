@@ -29,11 +29,13 @@ public class LogDemoService {
      */
     public Map<String, Object> asyncBurst(int lines) {
         int n = normalize(lines);
+        ASYNC_LOG.info("[log4j2][async] burst start lines={} traceId={}", n, MDC.get("traceId"));
         long start = System.nanoTime();
         for (int i = 0; i < n; i++) {
-            ASYNC_LOG.info("async-burst i={} traceId={}", i, MDC.get("traceId"));
+            ASYNC_LOG.info("[log4j2][async] i={} traceId={}", i, MDC.get("traceId"));
         }
         long costMs = (System.nanoTime() - start) / 1_000_000L;
+        ASYNC_LOG.info("[log4j2][async] burst done lines={} costMs={}", n, costMs);
         return result("AsyncLogger + Async Appender", n, costMs,
                 "业务线程只把事件丢进 Disruptor/队列；磁盘 IO 在后台线程，调用返回更快（不等落盘）");
     }
@@ -46,11 +48,13 @@ public class LogDemoService {
      */
     public Map<String, Object> syncBurst(int lines) {
         int n = normalize(lines);
+        SYNC_LOG.info("[log4j2][sync] burst start lines={} traceId={}", n, MDC.get("traceId"));
         long start = System.nanoTime();
         for (int i = 0; i < n; i++) {
-            SYNC_LOG.info("sync-burst i={} traceId={}", i, MDC.get("traceId"));
+            SYNC_LOG.info("[log4j2][sync] i={} traceId={}", i, MDC.get("traceId"));
         }
         long costMs = (System.nanoTime() - start) / 1_000_000L;
+        SYNC_LOG.info("[log4j2][sync] burst done lines={} costMs={}", n, costMs);
         return result("Root 同步 RollingFile", n, costMs,
                 "每条日志在业务线程上完成格式化与写 Appender，高并发时更容易拖慢接口");
     }
@@ -63,7 +67,7 @@ public class LogDemoService {
      */
     public Map<String, Object> sample(String message) {
         String safe = (message == null || message.isBlank()) ? "hello-log4j2" : message;
-        ASYNC_LOG.info("sample message={}", safe);
+        ASYNC_LOG.info("[log4j2] sample message={} traceId={}", safe, MDC.get("traceId"));
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("case", "MDC + PatternLayout %X{traceId}");
         body.put("input", safe);

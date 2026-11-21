@@ -45,6 +45,14 @@ cmd /c "mvn -pl springboot-web-exception -am spring-boot:run"
 
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 混合 | 响应对齐 HTTP + `traceId`；`/boom` 响应脱敏 |
+| 日志优先（细节） | `[exception]` 业务 warn；`/boom` **堆栈只在日志** |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

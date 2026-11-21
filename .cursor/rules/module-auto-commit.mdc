@@ -1,0 +1,27 @@
+---
+description: 百科模块完成后自动 git commit（不自动 push）
+alwaysApply: true
+---
+
+# 模块完成后自动提交
+
+当某个 `springboot-*` 百科模块**实现完成**（代码 + 测试通过 + README/docs + 进度/索引已同步）时：
+
+1. **立刻执行 git commit**，无需再问「要不要提交」
+2. **不要自动 `git push`**；仅当用户明确说推送/push 时再推远程
+3. 提交范围：该模块相关文件 + 本次同步的 `pom.xml`、`docs/进度.md`、`docs/索引.md`、根 `README.md`、计划「已落地」表；勿混入无关改动
+4. 禁止提交密钥：`.env`、私钥、真实口令、证书等（教学演示假口令除外）
+5. message 用中文，遵循仓库约定：
+
+```
+feat(<scope>): <简短描述>
+
+【问题描述】：...
+【根本原因】：...
+【修复方案】：...
+【影响范围】：...
+```
+
+`scope` 示例：`web-interceptor`、`web-exception`、`logback`。
+
+若本次只是文档/观测指南等横切改动、不是新模块，也按同样流程在收尾时自动 commit（type 用 `docs`/`chore`/`refactor`）。

@@ -54,7 +54,7 @@ public class EnterpriseExceptionAdvice {
      */
     @ExceptionHandler(BusinessException.class)
     public ResponseEntity<?> handleBusiness(BusinessException ex, HttpServletRequest request) {
-        log.warn("业务异常 code={} message={} path={}",
+        log.warn("[exception] 业务异常 code={} message={} path={}",
                 ex.getErrorCode().getCode(), ex.getMessage(), request.getRequestURI());
         return responseFactory.build(ex.getErrorCode(), ex.getMessage(), null, request);
     }
@@ -116,7 +116,7 @@ public class EnterpriseExceptionAdvice {
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<?> handleNotReadable(HttpMessageNotReadableException ex, HttpServletRequest request) {
-        log.warn("请求体不可读 path={} msg={}", request.getRequestURI(), ex.getMessage());
+        log.warn("[exception] 请求体不可读 path={} msg={}", request.getRequestURI(), ex.getMessage());
         return responseFactory.build(CommonErrorCode.BAD_REQUEST, "请求体格式错误", null, request);
     }
 
@@ -182,7 +182,7 @@ public class EnterpriseExceptionAdvice {
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleUnknown(Exception ex, HttpServletRequest request) {
-        log.error("未处理异常 path={}", request.getRequestURI(), ex);
+        log.error("[exception] 未处理异常 path={}（堆栈仅日志，不回传客户端）", request.getRequestURI(), ex);
         return responseFactory.build(CommonErrorCode.INTERNAL_ERROR, "服务器内部错误", null, request);
     }
 

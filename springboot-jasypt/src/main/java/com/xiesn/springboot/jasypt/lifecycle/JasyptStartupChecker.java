@@ -38,9 +38,9 @@ public class JasyptStartupChecker implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         String actual = demoSecretProperties.getDbPassword();
         if (EXPECTED_DB_PASSWORD.equals(actual)) {
-            log.info("Jasypt 解密自检通过：demo.secret.db-password 已还原为预期明文");
+            log.info("[jasypt] 解密自检通过：demo.secret.db-password 已还原为预期明文");
         } else {
-            log.warn("Jasypt 解密自检未通过：请确认 JASYPT_ENCRYPTOR_PASSWORD 是否为 springboot-learning-demo，当前值长度={}",
+            log.warn("[jasypt] 解密自检未通过：请确认 JASYPT_ENCRYPTOR_PASSWORD 是否为教学默认值，当前值长度={}",
                     actual == null ? 0 : actual.length());
         }
     }

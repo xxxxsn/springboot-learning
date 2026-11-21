@@ -1,4 +1,4 @@
-﻿# springboot-lifecycle
+# springboot-lifecycle
 
 > 编号：14 · 域 01 · **状态：已完成（2026-11-21）** · 端口：**8014**  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -53,6 +53,14 @@ spring:
 
 详见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 日志优先 | 启动/停机控制台 `[lifecycle] seq=... phase=...` |
+| 接口 | `GET /api/lifecycle/timeline` 只是汇总，顺序以日志为准 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

@@ -1,4 +1,4 @@
-﻿# springboot-jasypt
+# springboot-jasypt
 
 > 编号：11 · 域 01 · **状态：已完成（2026-11-20）** · 端口：**8011**  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -58,6 +58,14 @@ demo:
 2. `GET /api/jasypt/secrets` → `dbPasswordDecrypted=MySecretDbPassword!`
 3. 其余见 `api.http` 与 [docs/06-验证步骤.md](docs/06-验证步骤.md)
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 日志优先 | 启动：`Jasypt 解密自检通过` / `未通过` |
+| 接口 | `GET /api/jasypt/secrets` 看解密后字段（勿提交真实密钥） |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

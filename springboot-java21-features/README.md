@@ -1,4 +1,4 @@
-﻿# springboot-java21-features
+# springboot-java21-features
 
 > 编号：3 · 域 01 · **状态：已完成（2026-11-20）** · 端口：**8003**  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -38,6 +38,13 @@ server.port: 8003
 启动后执行 `api.http`，或访问 `GET /api/java21` 一次看全。  
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | `GET /api/java21` 各特性返回 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

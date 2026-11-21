@@ -67,6 +67,11 @@ public class ExceptionDemoController {
                 "validation", "#24",
                 "i18n", "#31"
         ));
+        data.put("observe", Map.of(
+                "mode", "混合",
+                "api", "看 HTTP 状态 + code/traceId；/boom 响应应脱敏",
+                "logs", "控制台搜 [exception]；/boom 堆栈只在日志"
+        ));
         return R.ok(data);
     }
 

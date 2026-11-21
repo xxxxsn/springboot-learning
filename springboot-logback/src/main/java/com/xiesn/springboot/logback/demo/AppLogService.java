@@ -24,8 +24,9 @@ public class AppLogService {
      */
     public Map<String, Object> sample(String message) {
         String safe = (message == null || message.isBlank()) ? "hello-logback" : message;
-        log.info("sample message={}", safe);
-        log.debug("sample debug (需包级别 DEBUG) message={}", safe);
+        log.info("[logback] sample message={} traceId={} userId={}",
+                safe, MDC.get("traceId"), MDC.get("userId"));
+        log.debug("[logback] sample debug (需包级别 DEBUG) message={}", safe);
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("case", "MDC Pattern：traceId/userId 打进文本日志");
         body.put("input", safe);

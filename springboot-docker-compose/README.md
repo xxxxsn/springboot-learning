@@ -46,6 +46,14 @@ IDE 直接跑 `DockerComposeApplication` 也可以：`ComposeFileEnvironmentPost
 
 然后访问 `GET /api/docker-compose/redis/ping`。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 混合 | `GET /api/docker-compose/redis/ping` |
+| 日志/Docker | Boot 拉起 compose 的日志；`docker compose ps` |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

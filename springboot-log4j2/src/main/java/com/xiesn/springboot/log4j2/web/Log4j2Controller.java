@@ -44,6 +44,11 @@ public class Log4j2Controller {
         body.put("hint", "若仍是 Logback LoggerContext，说明 spring-boot-starter-logging 未排除干净");
         body.put("configFile", "classpath:log4j2-spring.xml");
         body.put("logDir", "logs/springboot-log4j2/");
+        body.put("observe", Map.of(
+                "mode", "日志优先",
+                "trigger", "GET /api/log4j2/sample、/async-burst、/sync-burst",
+                "logs", "控制台搜 [log4j2]；对比 async/sync 耗时"
+        ));
         return R.ok(body);
     }
 

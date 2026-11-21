@@ -40,6 +40,14 @@ cmd /c "mvn -pl springboot-web-restful -am spring-boot:run"
 
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | 状态码 `201/204/404`、`Location`、信封 vs HTTP 状态对照 |
+| 日志 | 一般不必；业务异常若走到 common 可见 warn |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

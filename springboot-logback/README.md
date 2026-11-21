@@ -44,6 +44,14 @@ cmd /c "mvn -pl springboot-logback -am spring-boot:run"
 
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 日志优先 | `logs/springboot-logback/app.log`、`business.log`、`app.json.log`；控制台 MDC |
+| 接口 | `/api/logback/sample`、`/business` 只负责打点 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

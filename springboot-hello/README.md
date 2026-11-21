@@ -1,4 +1,4 @@
-﻿# springboot-hello
+# springboot-hello
 
 > 编号：2 · 域 01 · **状态：已完成（2026-11-20）** · 端口：**8002**  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -45,6 +45,14 @@ demo.hello.default-name: Spring Boot 3
 
 完整步骤：[docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | `api.http` / `GET /api/hello` |
+| 日志 | 启动时 `HelloStartupRunner` 问候语；自动配置是否生效 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

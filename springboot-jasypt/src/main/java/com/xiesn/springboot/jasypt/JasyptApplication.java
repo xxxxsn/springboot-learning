@@ -1,4 +1,4 @@
-﻿package com.xiesn.springboot.jasypt;
+package com.xiesn.springboot.jasypt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

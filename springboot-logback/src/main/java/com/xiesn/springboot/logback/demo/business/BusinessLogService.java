@@ -24,7 +24,8 @@ public class BusinessLogService {
      */
     public Map<String, Object> logAction(String action) {
         String safe = (action == null || action.isBlank()) ? "place-order" : action;
-        log.info("business action={} traceId={} userId={}", safe, MDC.get("traceId"), MDC.get("userId"));
+        log.info("[logback][business] action={} traceId={} userId={}",
+                safe, MDC.get("traceId"), MDC.get("userId"));
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("case", "按模块分文件：business logger → business.log");
         body.put("input", safe);

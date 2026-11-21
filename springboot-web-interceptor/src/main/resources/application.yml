@@ -1,0 +1,15 @@
+server:
+  port: 8027
+
+spring:
+  application:
+    name: springboot-web-interceptor
+
+demo:
+  interceptor:
+    # 演示鉴权 Filter 期望的 Token（教学用，非生产密钥）
+    demo-token: demo-token-8027
+
+logging:
+  level:
+    com.xiesn.springboot.web.interceptor: INFO

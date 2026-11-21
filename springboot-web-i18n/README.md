@@ -42,6 +42,14 @@
 `mvn -pl springboot-web-i18n -am test`，或启动后按 [api.http](api.http) 点。教学口令是 `secret`。  
 步骤：[docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | 换 `Accept-Language` / 请求头，对照错误 key 与文案 |
+| 配置 | `messages*.properties`、前端 catalog 样例 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

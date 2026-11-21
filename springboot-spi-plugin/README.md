@@ -44,6 +44,14 @@ server:
 2. `GET /api/spi/overview`
 3. `GET /api/spi/java/sms`、`GET /api/spi/spring/push`
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | `GET /api/spi/overview` |
+| 配置 | `META-INF/services`、factories 文件是否被加载 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

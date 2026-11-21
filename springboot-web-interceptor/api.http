@@ -1,0 +1,18 @@
+### 职责对照
+GET http://localhost:8027/api/interceptor/overview
+
+### 观测执行链（可看 Filter → Interceptor → Controller）
+GET http://localhost:8027/api/interceptor/chain
+X-Trace-Id: demo-trace-001
+X-Demo-User: alice
+
+### 鉴权失败（无 Token）→ 401
+GET http://localhost:8027/api/interceptor/secure/ping
+
+### 鉴权成功
+GET http://localhost:8027/api/interceptor/secure/ping
+X-Demo-Token: demo-token-8027
+X-Demo-User: bob
+
+### 创建 Session（触发 SessionListener）
+GET http://localhost:8027/api/interceptor/session

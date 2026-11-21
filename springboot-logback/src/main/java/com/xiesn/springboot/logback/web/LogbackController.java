@@ -59,6 +59,12 @@ public class LogbackController {
         body.put("logDir", dir.toAbsolutePath().toString());
         body.put("logDirExists", Files.isDirectory(dir));
         body.put("hint", "默认 Pattern 控制台；--spring.profiles.active=json 切 JSON 控制台；异步对比见 #19");
+        body.put("observe", Map.of(
+                "mode", "日志优先",
+                "trigger", "GET /api/logback/sample 与 /business",
+                "files", "logs/springboot-logback/app.log、business.log、app.json.log",
+                "logs", "控制台/文件搜 [logback]；看 MDC traceId/userId"
+        ));
         return R.ok(body);
     }
 

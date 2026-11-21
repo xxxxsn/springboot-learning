@@ -40,6 +40,14 @@ cmd /c "mvn -pl springboot-web-validation -am spring-boot:run"
 
 见 [docs/06-验证步骤.md](docs/06-验证步骤.md)。
 
+## 怎么观察（学习用）
+
+| 方式 | 看什么 |
+|---|---|
+| 接口优先 | `code=400` + `data` 字段错误列表；分组 Create/Update |
+| 日志 | 校验失败通常不打堆栈，以响应为准 |
+
+总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。
