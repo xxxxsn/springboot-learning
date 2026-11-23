@@ -1,0 +1,39 @@
+### 总览：企业字段 / 全局配置下的普通对象 / 默认 ObjectMapper 文本
+GET http://localhost:8026/api/jackson/overview
+
+### 只看企业订单
+GET http://localhost:8026/api/jackson/orders/sample
+
+### 反序列化：字符串主键 + 数字状态码 + 两种日期
+POST http://localhost:8026/api/jackson/orders
+Content-Type: application/json
+
+{
+  "id": "9007199254740993",
+  "createdAt": "2026-11-23 08:30:00",
+  "paidAt": "2026/11/23 09:05",
+  "status": 20,
+  "amountCent": 1990
+}
+
+### 反序列化：数字主键 + 枚举名
+POST http://localhost:8026/api/jackson/orders
+Content-Type: application/json
+
+{
+  "id": 9007199254740993,
+  "createdAt": "2026-11-23 08:30:00",
+  "status": "PAID",
+  "amountCent": 1
+}
+
+### ISO-8601 的 LocalDateTime 会被拒绝（code=400）
+POST http://localhost:8026/api/jackson/orders
+Content-Type: application/json
+
+{
+  "id": "1",
+  "createdAt": "2026-11-23T08:30:00",
+  "status": 10,
+  "amountCent": 1
+}
