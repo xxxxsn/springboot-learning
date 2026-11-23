@@ -20,7 +20,7 @@
 | **对照选型** | 看第五节选型表 + 模块「推荐度」列，打开对照模块对比 |
 | **当培训材料** | 附录 A/B/C 有建议顺序、竖切里程碑、综合项目（可忽略） |
 
-### 已落地代码（截至 2026-11-21）
+### 已落地代码（截至 2026-11-23）
 
 | # | 模块 | 端口 | 说明 |
 |---|---|---|---|
@@ -39,6 +39,7 @@
 | 23 | `springboot-web-restful` | 8023 | REST 规范、统一 R、HTTP 状态对照 |
 | 24 | `springboot-web-validation` | 8024 | 自定义注解、分组、嵌套、手动 Validator |
 | 25 | `springboot-web-exception` | 8025 | 企业异常：码→HTTP、traceId、信封/ProblemDetail |
+| 26 | `springboot-web-jackson` | 8026 | 日期格式、Long 精度、枚举码、空值 |
 | 27 | `springboot-web-interceptor` | 8027 | Filter/Interceptor/Listener 职责对照 |
 | 31 | `springboot-web-i18n` | 8031 | 错误码返回 i18n key，MessageSource 对照 |
 

@@ -1,0 +1,18 @@
+server:
+  port: 8026
+
+spring:
+  application:
+    name: springboot-web-jackson
+  jackson:
+    serialization:
+      # java.util.Date / Calendar 不写成时间戳；Java 8 时间还要看 customizer
+      write-dates-as-timestamps: false
+    # 只作用于 java.util.Date，不管 LocalDateTime
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    com.xiesn.springboot.web.jackson: INFO
