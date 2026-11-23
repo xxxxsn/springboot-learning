@@ -1,0 +1,10 @@
+server:
+  port: 8028
+
+spring:
+  application:
+    name: springboot-web-resolver
+
+logging:
+  level:
+    com.xiesn.springboot.web.resolver: INFO
