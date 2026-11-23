@@ -49,6 +49,7 @@
         <module>springboot-web-exception</module>
         <module>springboot-web-jackson</module>
         <module>springboot-web-interceptor</module>
+        <module>springboot-web-resolver</module>
         <module>springboot-web-i18n</module>
     </modules>
 

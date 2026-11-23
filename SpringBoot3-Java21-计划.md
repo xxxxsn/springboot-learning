@@ -41,6 +41,7 @@
 | 25 | `springboot-web-exception` | 8025 | 企业异常：码→HTTP、traceId、信封/ProblemDetail |
 | 26 | `springboot-web-jackson` | 8026 | 日期格式、Long 精度、枚举码、空值 |
 | 27 | `springboot-web-interceptor` | 8027 | Filter/Interceptor/Listener 职责对照 |
+| 28 | `springboot-web-resolver` | 8028 | `@CurrentUser` 参数解析、`@ApiResult` 返回值包装 |
 | 31 | `springboot-web-i18n` | 8031 | 错误码返回 i18n key，MessageSource 对照 |
 
 其余仍以本清单为索引；域 01 其它模块目前多为工程骨架。

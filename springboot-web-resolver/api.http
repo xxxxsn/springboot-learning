@@ -1,0 +1,21 @@
+### 总览
+GET http://localhost:8028/api/resolver/overview
+
+### 缺少用户 → code=401（HTTP 仍是 200，信封由 common 处理）
+GET http://localhost:8028/api/resolver/me
+
+### 注入当前用户，并包进 R
+GET http://localhost:8028/api/resolver/me
+X-User-Id: 7
+X-User-Name: ada
+
+### 可选用户：没有请求头就是访客
+GET http://localhost:8028/api/resolver/me/optional
+
+### 返回值已经是 R，不再套一层
+GET http://localhost:8028/api/resolver/already-wrapped
+
+### 没有 @ApiResult，响应体就是资料本身
+GET http://localhost:8028/api/resolver/plain
+X-User-Id: 7
+X-User-Name: ada
