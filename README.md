@@ -30,6 +30,7 @@ Spring Boot 3 + Java 21 企业技术百科（可运行案例库）。
 | 27 | `springboot-web-interceptor` | 8027 | 已完成 | Filter/Interceptor/Listener 职责对照、Trace、轻量鉴权、耗时 |
 | 28 | `springboot-web-resolver` | 8028 | 已完成 | `@CurrentUser` 参数解析；`@ApiResult` 返回值包装 |
 | 29 | `springboot-web-cors` | 8029 | 已完成 | 全局白名单、`@CrossOrigin` 并集、预检与凭证 |
+| 30 | `springboot-mapstruct` | 8030 | 已完成 | DTO/VO/Entity：嵌套、集合、类型转换、局部更新 |
 | 31 | `springboot-web-i18n` | 8031 | 已完成 | 错误响应返回 i18n key；MessageSource 按请求语言对照 |
 
 其余域 01（1–22）多为**骨架占位**，见 [`docs/索引.md`](docs/索引.md)。
@@ -74,6 +75,7 @@ mvn -pl springboot-maven-multimodule/demo-web -am spring-boot:run
 # interceptor → http://localhost:8027/api/interceptor/chain
 # resolver   → http://localhost:8028/api/resolver/me
 # cors        → http://localhost:8029/api/cors/overview
+# mapstruct   → http://localhost:8030/api/mapstruct/overview
 # i18n        → http://localhost:8031/api/i18n/login
 ```
 
@@ -82,7 +84,7 @@ Jasypt 教学默认主密钥：`springboot-learning-demo`（可用环境变量 `
 ## 构建
 
 ```bash
-mvn -pl springboot-common,springboot-hello,springboot-java21-features,springboot-maven-multimodule,springboot-lombok-hutool,springboot-profiles,springboot-jasypt,springboot-lifecycle,springboot-spi-plugin,springboot-docker-compose,springboot-logback,springboot-log4j2,springboot-web-restful,springboot-web-validation,springboot-web-exception,springboot-web-jackson,springboot-web-interceptor,springboot-web-resolver,springboot-web-cors,springboot-web-i18n -am package
+mvn -pl springboot-common,springboot-hello,springboot-java21-features,springboot-maven-multimodule,springboot-lombok-hutool,springboot-profiles,springboot-jasypt,springboot-lifecycle,springboot-spi-plugin,springboot-docker-compose,springboot-logback,springboot-log4j2,springboot-web-restful,springboot-web-validation,springboot-web-exception,springboot-web-jackson,springboot-web-interceptor,springboot-web-resolver,springboot-web-cors,springboot-mapstruct,springboot-web-i18n -am package
 ```
 
 
