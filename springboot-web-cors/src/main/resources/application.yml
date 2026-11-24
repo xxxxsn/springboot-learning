@@ -1,0 +1,11 @@
+server:
+  port: 8029
+
+spring:
+  application:
+    name: springboot-web-cors
+
+logging:
+  level:
+    com.xiesn.springboot.web.cors: INFO
+    org.springframework.web.cors: DEBUG

@@ -20,7 +20,7 @@
 | **对照选型** | 看第五节选型表 + 模块「推荐度」列，打开对照模块对比 |
 | **当培训材料** | 附录 A/B/C 有建议顺序、竖切里程碑、综合项目（可忽略） |
 
-### 已落地代码（截至 2026-11-23）
+### 已落地代码（截至 2026-11-24）
 
 | # | 模块 | 端口 | 说明 |
 |---|---|---|---|
@@ -42,6 +42,7 @@
 | 26 | `springboot-web-jackson` | 8026 | 日期格式、Long 精度、枚举码、空值 |
 | 27 | `springboot-web-interceptor` | 8027 | Filter/Interceptor/Listener 职责对照 |
 | 28 | `springboot-web-resolver` | 8028 | `@CurrentUser` 参数解析、`@ApiResult` 返回值包装 |
+| 29 | `springboot-web-cors` | 8029 | 全局白名单、`@CrossOrigin` 并集、预检与凭证 |
 | 31 | `springboot-web-i18n` | 8031 | 错误码返回 i18n key，MessageSource 对照 |
 
 其余仍以本清单为索引；域 01 其它模块目前多为工程骨架。

@@ -1,0 +1,33 @@
+### 白名单源：应回显 Origin，并允许凭证
+GET http://localhost:8029/api/cors/overview
+Origin: https://admin.example.com
+
+### 没有 Origin：普通请求，不写跨域响应头
+GET http://localhost:8029/api/cors/overview
+
+### 不在白名单：403
+GET http://localhost:8029/api/cors/overview
+Origin: https://evil.example.com
+
+### 预检：管理端 POST
+OPTIONS http://localhost:8029/api/cors/messages
+Origin: https://admin.example.com
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: Content-Type
+
+### 方法级追加的商城源
+GET http://localhost:8029/api/cors/shop
+Origin: https://shop.example.com
+
+### 商城源不能打只有全局配置的接口
+GET http://localhost:8029/api/cors/overview
+Origin: https://shop.example.com
+
+### 映射之外：200，但没有 Access-Control-Allow-Origin
+GET http://localhost:8029/api/plain/ping
+Origin: https://admin.example.com
+
+### 映射之外的预检：403 Invalid CORS request
+OPTIONS http://localhost:8029/api/plain/ping
+Origin: https://admin.example.com
+Access-Control-Request-Method: GET
