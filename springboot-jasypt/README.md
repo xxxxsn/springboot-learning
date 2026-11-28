@@ -66,6 +66,7 @@ demo:
 | 接口 | `GET /api/jasypt/secrets` 看解密后字段（勿提交真实密钥） |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

@@ -49,6 +49,7 @@
 | 日志 | 其它模块抛 `BusinessException` 时 common 处理器打 warn |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

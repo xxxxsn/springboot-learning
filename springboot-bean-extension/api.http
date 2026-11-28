@@ -1,4 +1,4 @@
-﻿### springboot-bean-extension 骨架占位（功能未实现）
+### springboot-bean-extension 骨架占位（功能未实现）
 ### 端口: 8015
 
 GET http://localhost:8015/actuator/health

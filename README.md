@@ -1,4 +1,4 @@
-﻿# springboot-learning
+# springboot-learning
 
 Spring Boot 3 + Java 21 企业技术百科（可运行案例库）。
 

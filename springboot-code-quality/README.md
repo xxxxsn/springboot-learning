@@ -1,4 +1,4 @@
-﻿# springboot-code-quality
+# springboot-code-quality
 
 > 编号：7 · 域 01 · 工程基础与 Boot 核心
 

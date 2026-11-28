@@ -1,4 +1,4 @@
-﻿# 多模块共享中间件（手动按 profile 启动）
+# 多模块共享中间件（手动按 profile 启动）
 # 示例：docker compose --profile mysql --profile redis up -d
 #
 # 若要体验「应用启动时自动 compose up + Service Connection」，

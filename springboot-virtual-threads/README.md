@@ -1,4 +1,4 @@
-﻿# springboot-virtual-threads
+# springboot-virtual-threads
 
 > 编号：4 · 域 01 · 工程基础与 Boot 核心
 

@@ -53,6 +53,7 @@ cmd /c "mvn -pl springboot-web-interceptor -am spring-boot:run"
 | 日志优先（细节） | `[access] METHOD uri status costMs`；`[session] sessionCreated`（需真实启动，MockMvc 看不全 Listener） |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

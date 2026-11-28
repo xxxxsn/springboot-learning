@@ -61,6 +61,7 @@ spring:
 | 接口 | `GET /api/lifecycle/timeline` 只是汇总，顺序以日志为准 |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

@@ -1,4 +1,4 @@
-﻿### 查看自动解密后的配置
+### 查看自动解密后的配置
 GET http://localhost:8011/api/jasypt/secrets
 
 ### 加密明文（返回可粘贴的 ENC(...)）

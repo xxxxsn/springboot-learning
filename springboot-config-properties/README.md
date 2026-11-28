@@ -1,4 +1,4 @@
-﻿# springboot-config-properties
+# springboot-config-properties
 
 > 编号：10 · 域 01 · 工程基础与 Boot 核心
 
