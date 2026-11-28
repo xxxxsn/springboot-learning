@@ -55,6 +55,7 @@ mvn -pl springboot-web-jackson -am test
 | 接口优先 | `enterprise` 与 `plain` 的 id、status、时间、null；`rawPlainJson` 是默认 ObjectMapper |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

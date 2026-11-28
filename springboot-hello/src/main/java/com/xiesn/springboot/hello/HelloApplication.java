@@ -1,4 +1,4 @@
-﻿package com.xiesn.springboot.hello;
+package com.xiesn.springboot.hello;
 
 import com.xiesn.springboot.hello.autoconfigure.HelloAutoConfiguration;
 import org.springframework.boot.SpringApplication;

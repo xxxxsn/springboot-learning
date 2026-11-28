@@ -54,6 +54,7 @@ cmd /c "mvn -pl springboot-profiles spring-boot:run -Dspring-boot.run.arguments=
 | 日志 | 启动横幅 / active profiles；切 `--spring.profiles.active=...` 对照 |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

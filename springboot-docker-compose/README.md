@@ -54,6 +54,7 @@ IDE 直接跑 `DockerComposeApplication` 也可以：`ComposeFileEnvironmentPost
 | 日志/Docker | Boot 拉起 compose 的日志；`docker compose ps` |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

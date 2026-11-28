@@ -66,6 +66,7 @@ mvn -pl springboot-maven-multimodule/demo-web -am spring-boot:run
 | 结构 | api / service / web 分层与 BOM，看源码比看日志更重要 |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

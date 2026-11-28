@@ -1,4 +1,4 @@
-﻿package com.xiesn.springboot.virtual.threads;
+package com.xiesn.springboot.virtual.threads;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-﻿package com.xiesn.springboot.test.coverage;
+package com.xiesn.springboot.test.coverage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

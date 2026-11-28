@@ -1,4 +1,4 @@
-﻿package com.xiesn.springboot.devtools;
+package com.xiesn.springboot.devtools;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

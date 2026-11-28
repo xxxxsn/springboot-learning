@@ -1,4 +1,4 @@
-﻿### springboot-virtual-threads 骨架占位（功能未实现）
+### springboot-virtual-threads 骨架占位（功能未实现）
 ### 端口: 8004
 
 GET http://localhost:8004/actuator/health

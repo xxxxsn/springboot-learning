@@ -1,4 +1,4 @@
-﻿### springboot-config-properties 骨架占位（功能未实现）
+### springboot-config-properties 骨架占位（功能未实现）
 ### 端口: 8010
 
 GET http://localhost:8010/actuator/health

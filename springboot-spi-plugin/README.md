@@ -1,4 +1,4 @@
- springboot-spi-plugin
+# springboot-spi-plugin
 
 > 编号：16 · 域 01 · **状态：已完成（2026-11-21）** · 端口：**8016**  
 > 展开笔记：[docs/](docs/) · 自测：[api.http](api.http) · 总进度：[docs/进度.md](../docs/进度.md)
@@ -52,6 +52,7 @@ server:
 | 配置 | `META-INF/services`、factories 文件是否被加载 |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。

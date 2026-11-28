@@ -1,4 +1,4 @@
-﻿### 商品列表（演示 web → service → api）
+### 商品列表（演示 web → service → api）
 GET http://localhost:8005/api/products
 
 ### 商品详情

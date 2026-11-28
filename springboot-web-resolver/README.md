@@ -55,6 +55,7 @@ mvn -pl springboot-web-resolver -am test
 | 日志 | 启动：`[resolver] ApiResult 返回值处理器已插入首位` |
 
 总指南：[docs/学习观测指南.md](../docs/学习观测指南.md)
+
 ## 7. 常见坑与排障
 
 见 [docs/07-常见坑与排障.md](docs/07-常见坑与排障.md)。
