@@ -1,0 +1,85 @@
+### 总览：详情 / 摘要 / 不落库的局部更新预览
+GET http://localhost:8030/api/mapstruct/overview
+
+### 样例详情（主键是字符串，金额是元）
+GET http://localhost:8030/api/mapstruct/orders/sample
+
+### 摘要列表
+GET http://localhost:8030/api/mapstruct/orders/summaries
+
+### 创建：客户端 id 会被忽略；19.90×2 + 1.00 = 40.80
+POST http://localhost:8030/api/mapstruct/orders
+Content-Type: application/json
+
+{
+  "id": 1,
+  "buyerName": "李四",
+  "statusCode": 10,
+  "remark": "加急",
+  "address": {"province": "浙江省", "city": "宁波市", "street": "天一广场"},
+  "items": [
+    {"skuCode": "SKU-1", "skuName": "杯子", "quantity": 2, "priceYuan": 19.90},
+    {"skuCode": "SKU-2", "skuName": "盖子", "quantity": 1, "priceYuan": 1.00}
+  ]
+}
+
+### 不传明细：items 为 []，金额 0
+POST http://localhost:8030/api/mapstruct/orders
+Content-Type: application/json
+
+{
+  "buyerName": "无明细",
+  "statusCode": 10
+}
+
+### 未知状态码（body.code=400）
+POST http://localhost:8030/api/mapstruct/orders
+Content-Type: application/json
+
+{
+  "buyerName": "状态",
+  "statusCode": 99
+}
+
+### 金额超过两位小数（body.code=400）
+POST http://localhost:8030/api/mapstruct/orders
+Content-Type: application/json
+
+{
+  "buyerName": "小数",
+  "statusCode": 10,
+  "items": [{"skuCode": "A", "skuName": "a", "quantity": 1, "priceYuan": 1.999}]
+}
+
+### 局部更新：把上一笔创建返回的 id 填到路径里。没传的字段保持原值
+PATCH http://localhost:8030/api/mapstruct/orders/9007199254741001
+Content-Type: application/json
+
+{
+  "remark": "已改",
+  "statusCode": 20
+}
+
+### 地址只改街道
+PATCH http://localhost:8030/api/mapstruct/orders/9007199254741001
+Content-Type: application/json
+
+{
+  "address": {"street": "西湖"}
+}
+
+### 明细整表替换，金额按新明细重算
+PATCH http://localhost:8030/api/mapstruct/orders/9007199254741001
+Content-Type: application/json
+
+{
+  "items": [{"skuCode": "SKU-9", "skuName": "壶", "quantity": 3, "priceYuan": 3.00}]
+}
+
+### 订单不存在（body.code=404）
+PATCH http://localhost:8030/api/mapstruct/orders/1
+Content-Type: application/json
+
+{
+  "remark": "不存在"
+}

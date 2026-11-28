@@ -43,6 +43,7 @@
 | 27 | `springboot-web-interceptor` | 8027 | Filter/Interceptor/Listener 职责对照 |
 | 28 | `springboot-web-resolver` | 8028 | `@CurrentUser` 参数解析、`@ApiResult` 返回值包装 |
 | 29 | `springboot-web-cors` | 8029 | 全局白名单、`@CrossOrigin` 并集、预检与凭证 |
+| 30 | `springboot-mapstruct` | 8030 | DTO/VO/Entity：嵌套、集合、类型转换、局部更新 |
 | 31 | `springboot-web-i18n` | 8031 | 错误码返回 i18n key，MessageSource 对照 |
 
 其余仍以本清单为索引；域 01 其它模块目前多为工程骨架。
